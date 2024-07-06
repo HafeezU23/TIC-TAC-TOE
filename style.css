@@ -48,6 +48,7 @@ body{
 
 }
 #new-btn{
+        margin-top: 2rem;
         padding: 1rem;
         font-size: 1.5rem;
         background-color: #FFB703;
@@ -61,7 +62,12 @@ body{
     font-size: 2rem;
 }
 .msg-container{
-    height: 25vmin;
+    height: 100vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
 }
 .hide{
     display: none;
