@@ -71,6 +71,8 @@ let turnO = true; //playerx and playero
                 if(pos1val===pos2val && pos2val===pos3val){
     
                     showWinner(pos1val);
+                    let sound=new Audio('winning.mp3');
+                    sound.play();
                     return;
                 }
                 
@@ -83,6 +85,8 @@ let turnO = true; //playerx and playero
               
           }
           if(filledBoxes===9){
+            let drawSound=new Audio('draw.mp3');
+            drawSound.play();
               showDraw();
           }
             
