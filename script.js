@@ -61,6 +61,7 @@ let turnO = true; //playerx and playero
     disableBoxes();
  }
  const checkWinner=()=>{
+         let filledBoxes=0;
           for(let pattern of winPattern){
               let pos1val= btns[pattern[0]].innerText;
               let pos2val= btns[pattern[1]].innerText;
@@ -70,12 +71,21 @@ let turnO = true; //playerx and playero
                 if(pos1val===pos2val && pos2val===pos3val){
     
                     showWinner(pos1val);
+                    return;
                 }
-                else if(pos1val!==pos2val && pos2val!==pos3val){
-                    showDraw();
-                }
+                
               }
           }
+          for(let btn of btns){
+            if(btn.innerText!=""){
+               filledBoxes++;
+            }
+              
+          }
+          if(filledBoxes===9){
+              showDraw();
+          }
+            
  };
 
  newGameBtn.addEventListener("click",resetGame);
